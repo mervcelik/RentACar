@@ -7,14 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Brands\Constans\" />
-    <Folder Include="Features\Brands\Rules\" />
-    <Folder Include="Features\Brands\Queries\" />
+    <Folder Include="Features\Models\Commands\" />
+    <Folder Include="Features\Models\Constans\" />
+    <Folder Include="Features\Models\Rules\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="MediatR" Version="12.5.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.6" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Core.Application">
+      <HintPath>..\..\Core.Package\Core.Application\bin\Debug\net8.0\Core.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.CrossCuttingConcerns">
+      <HintPath>..\..\Core.Package\Core.CrossCuttingConcerns\bin\Debug\net8.0\Core.CrossCuttingConcerns.dll</HintPath>
+    </Reference>
     <Reference Include="Core.Persistence">
       <HintPath>..\..\Core.Package\Core.Persistence\bin\Debug\net8.0\Core.Persistence.dll</HintPath>
     </Reference>
