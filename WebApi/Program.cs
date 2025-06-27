@@ -1,5 +1,6 @@
 using Application;
 using Core.CrossCuttingConcerns.Exceptions.Extensions;
+using Core.Security;
 using Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +12,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddApplicationService();
 builder.Services.AddPersistenceService(builder.Configuration);
-
+builder.Services.AddSecurityServices();
+builder.Services.AddHttpContextAccessor();
 //builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddStackExchangeRedisCache(options =>
@@ -31,7 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-if (app.Environment.IsProduction())
+//if (app.Environment.IsProduction())
     app.configureExceptionMiddleware();
 
 app.UseHttpsRedirection();

@@ -2,6 +2,7 @@
 using Application.Repositories;
 using AutoMapper;
 using Core.Application.Piplines.Caching;
+using Core.Application.Piplines.Logging;
 using Core.Application.Piplines.Transaction;
 using Domain.Entities;
 using MediatR;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Brands.Commands.Create;
 
-public class CreateBrandCommand : IRequest<CreatedBrandResponse>, ITransactionalRequest, ICacheRemoverRequest
+public class CreateBrandCommand : IRequest<CreatedBrandResponse>, ITransactionalRequest, ICacheRemoverRequest,ILoggableRequest
 {
     public string Name { get; set; }
     public string? CacheKey => "";
