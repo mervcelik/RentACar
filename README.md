@@ -39,5 +39,5 @@ Katmanlar aşağıdaki şekilde yapılandırılmıştır:
 Projeyi klonlayın:
 
 ```bash
-git clone https://github.com/kullaniciadi/RentACar.git
+git clone https://github.com/mervcelik/RentACar.git
 cd RentACar
